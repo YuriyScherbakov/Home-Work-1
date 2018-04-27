@@ -1,0 +1,56 @@
+﻿
+
+@{
+    ViewBag.Title = "Заполнить анкету";
+}
+@section Menu
+{<div class="menu">
+        <div>@Html.ActionLink("Главная","Index","Main")</div>
+        <div>@Html.ActionLink("Гостевая","GuestPage","Main")</div>
+        <div>@Html.ActionLink("Анкета","AddProfile","Main")</div>
+    </div>
+}
+<ul>
+    <li>
+        <div class="articleHeader">
+            <div class="articleHeaderReadArticle"></div>
+        </div>
+
+        <div class="articleContainer">
+            <div class="divArticleContainerLogo">
+                <div class="divArticleContainerLogoContainer">
+                </div>
+            </div>
+            <div class="divArticleContainerText">
+                <div>
+
+                    @using ( Html.BeginForm (FormMethod.Post) )
+                        {
+                        <input type="text" name="name" placeholder="Укажите Ваше имя">
+
+                        <textarea name="AboutMe" placeholder="Пару слов о себе..." style="height:150px"></textarea>
+                     <div>
+                         Мне нравятся
+                     </div>
+                   
+                       @Html.CheckBox("Cats")<span>Кошечки</span><br>
+                        @Html.CheckBox("Dogs")<span>Собачки</span><br>
+                            @Html.CheckBox("Birds")<span> Птички </span>
+                            <div>
+                                Кто на свете всех добрее
+                            </div>
+                            @Html.RadioButton("Person","Mom")
+                    <span>Мама</span><br>
+                            @Html.RadioButton("Person","Dad")
+                    <span>Папа</span><br>
+                            @Html.RadioButton("Person","Grandma")
+                    <span>Бабушка</span>
+                            <input type="submit" value="Сохранить анкету">
+                        }
+                
+                </div>
+            </div>
+        </div>
+    </li>
+    <div class="articleSpace"></div>
+</ul>

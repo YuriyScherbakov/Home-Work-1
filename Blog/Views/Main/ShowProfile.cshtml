@@ -1,0 +1,61 @@
+﻿@model Blog.Models.Profile
+@using Blog.Helpers
+
+
+@{
+    ViewBag.Title = "Анкета";
+}
+
+
+<ul>
+    <li>
+        <div class="articleHeader">
+            <div class="articleHeaderReadArticle"></div>
+        </div>
+
+        <div class="articleContainer">
+            <div class="divArticleContainerLogo">
+                <div class="divArticleContainerLogoContainer">
+                </div>
+            </div>
+            <div class="divArticleContainerText">
+                <div class="profile">
+                    <div class="row">
+                       <div class="cell">Имя </div>
+                        <div class="cell">
+                            @Html.DisplayFor(m => m.Name)
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell">О себе </div>
+                        <div class="cell">
+                            @Html.DisplayFor(m => m.AboutMe)
+                        </div>
+                    </div >
+                    <div class="row">
+                        <div class="cell">Мне нравятся </div>
+                        <div class="cell">
+                            @Html.CreateProfileHelper(Model.Likes,"ul")
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell">Добрее всех конечно </div>
+                        <div class="cell">
+                            @Html.DisplayFor(m => m.KindnessOpinion)
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </li>
+    <div class="articleSpace"></div>
+</ul>
+
+@section Menu
+{<div class="menu">
+        <div>@Html.ActionLink("Главная","Index","Main")</div>
+        <div>@Html.ActionLink("Гостевая","GuestPage","Main")</div>
+        <div>@Html.ActionLink("Анкета","AddProfile","Main")</div>
+    </div>
+}

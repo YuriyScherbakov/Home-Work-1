@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Blog.Models.Review>
+
+@{
+    ViewBag.Title = "Гостевая";
+}
+
+@using ( Html.BeginForm ("AddReview","Main", FormMethod.Post) )
+    {
+    <button class="button button4">Добавить отзыв</button>
+    }
+
+@section Menu
+{<div class="menu">
+        <div>@Html.ActionLink("Главная","Index","Main")</div>
+        <div>@Html.ActionLink("Гостевая","GuestPage","Main")</div>
+        <div>@Html.ActionLink("Анкета","AddProfile","Main")</div>
+    </div>
+}
+<ul>
+
+    @foreach ( var item in Model )
+        {
+        <li>
+            <div class="articleHeader">
+                <div class="articleHeaderReadArticle"></div>
+            </div>
+
+            <div class="articleContainer">
+                <div class="divArticleContainerLogo">
+                    <div class="divArticleContainerLogoContainer">
+                    </div>
+                </div>
+                <div class="divArticleContainerText">
+                    <div class="divArticleContainerTextNameDate">
+                        <h3 class="divArticleContainerTextNameDateName">
+                            @Html.DisplayFor(modelItem => item.Name)
+                    </h3><p class="divArticleContainerTextNameDateDate">Дата публикации @Html.DisplayFor(modelItem => item.PublicationDateToShortDateString)</p>
+                </div><div class="divArticleContainerTextPlain">
+                    <p class="divArticleContainerTextPlainContainer">
+                        @Html.DisplayFor(modelItem => item.Text)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </li>
+        <div class="articleSpace"></div>
+        }
+</ul>

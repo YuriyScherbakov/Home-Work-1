@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Добавьте свой отзыв";
+}
+
+
+
+<ul>
+        <li>
+            <div class="articleHeader">
+                <div class="articleHeaderReadArticle"></div>
+            </div>
+
+            <div class="articleContainer">
+                <div class="divArticleContainerLogo">
+                    <div class="divArticleContainerLogoContainer">
+                    </div>
+                </div>
+                <div class="divArticleContainerText">
+                    <div>
+                        @using ( Html.BeginForm (FormMethod.Post) )
+                            {                
+                            <input type="text"  name="name" placeholder="Укажите Ваше имя">
+                           
+                            <textarea   name="review" placeholder="Напишите тут.." style="height:200px"></textarea>
+
+                            <input type="submit" value="Submit">
+                            }
+                    </div>
+                </div>
+            </div>
+        </li>
+        <div class="articleSpace"></div>
+</ul>
+
+@section Menu
+{<div class="menu">
+        <div>@Html.ActionLink("Главная","Index","Main")</div>
+        <div>@Html.ActionLink("Гостевая","GuestPage","Main")</div>
+        <div>@Html.ActionLink("Анкета","AddProfile","Main")</div>
+    </div>
+}

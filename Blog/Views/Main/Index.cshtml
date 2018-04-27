@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Blog.Models.Article>
+@using Blog.Helpers
+
+@{
+    ViewBag.Title = "Главная";
+}
+@Html.CreateList(Model)
+
+@section Menu
+{<div class="menu">
+<div>@Html.ActionLink("Главная","Index","Main")</div>
+<div>@Html.ActionLink("Гостевая","GuestPage","Main")</div>
+<div>@Html.ActionLink("Анкета","AddProfile","Main")</div>
+    </div>
+}
