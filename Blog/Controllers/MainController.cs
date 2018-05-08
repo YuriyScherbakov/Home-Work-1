@@ -4,34 +4,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DAL.Models;
+using DAL.Repos;
 
 namespace Blog.Controllers
 {
     public class MainController : Controller
         {
-        IList<Article> articles;
-        IList<Review> reviews;
+            /// <summary>
+            /// The unit of work class serves one purpose: to make sure that when you use multiple
+            /// repositories, they share a single database context.
+            /// </summary>
+        private UnitOfWork unitOfWork = new UnitOfWork();
 
-        public MainController ()
-            {
-            this.articles = ArticlesCreator.GetArticles ();
-            this.reviews = ReviewsCreator.GetReviews ();
-            }
-
-        // GET: Main
         public ActionResult Index ()
             {
-            return View (this.articles);
+            return View (this.unitOfWork.ArticleRepository.Get());
             }
         public ActionResult GetArticle (int Id)
+        {
+            var articlesSingle = new List<Article>()
             {
-            var articlesSingle = new List<Article> ();
-            articlesSingle.Add (this.articles.Single (a => a.Id == Id));
+                this.unitOfWork.ArticleRepository.GetByID(Id)
+            };
+           
             return View ("Index",articlesSingle);
             }
         public ActionResult GuestPage ()
             {
-            return View (this.reviews);
+            return View (this.unitOfWork.ReviewRepository.Get ());
             }
         [HttpGet]
         public ActionResult AddReview ()
@@ -47,11 +48,15 @@ namespace Blog.Controllers
                 }
             else
                 {
-                this.reviews.Add (new Review (this.reviews,name,review));
-                return View ("GuestPage",this.reviews);
+                this.unitOfWork.ReviewRepository.Insert(new Review (this.unitOfWork
+                    .ReviewRepository.Get(),name,review));
+                    this.unitOfWork.Save();
+                return View ("GuestPage",this.unitOfWork.ReviewRepository.Get ());
                 }
             
             }
+
+           
 
 
         [HttpGet]
@@ -61,22 +66,24 @@ namespace Blog.Controllers
             }
         [HttpPost]
         public ActionResult AddProfile (FormCollection formCollection)
-            {
+        {
+          
+
             var profile = new Profile ();
 
             profile.Name = formCollection ["name"];
             profile.AboutMe = formCollection ["AboutMe"];
             if ( formCollection ["Cats"].Contains("true") )
                 {
-                profile.Likes.Add("Кошечки");
+                profile.Likes.Add(new Like(){SomeOneToLike = "Кошечки"});
                 }
             if ( formCollection ["Birds"].Contains ("true") )
                 {
-                profile.Likes.Add ("Птички");
+                profile.Likes.Add (new Like () { SomeOneToLike = "Птички"});
                 }
             if ( formCollection ["Dogs"].Contains ("true") )
                 {
-                profile.Likes.Add ("Собачки");
+                profile.Likes.Add (new Like () { SomeOneToLike = "Собачки"});
                 }
 
             switch ( formCollection ["Person"] )
@@ -90,6 +97,10 @@ namespace Blog.Controllers
                 profile.KindnessOpinion = "Папа";
                 break;
                 }
+
+            unitOfWork.ProfileRepository.Insert(profile);
+            unitOfWork.Save();
+
             return View ("ShowProfile",profile);
             }
 

@@ -21,27 +21,38 @@
             <div class="divArticleContainerText">
                 <div class="profile">
                     <div class="row">
-                       <div class="cell">Имя </div>
-                        <div class="cell">
+                        <div class="cell">Имя </div>
+                        <div class="cell  indent">
                             @Html.DisplayFor(m => m.Name)
                         </div>
                     </div>
                     <div class="row">
-                        <div class="cell">О себе </div>
+                        <div class="cell"><div>О себе</div> </div>
                         <div class="cell">
-                            @Html.DisplayFor(m => m.AboutMe)
-                        </div>
-                    </div >
-                    <div class="row">
-                        <div class="cell">Мне нравятся </div>
-                        <div class="cell">
-                            @Html.CreateProfileHelper(Model.Likes,"ul")
+                            <div class="indent">
+                                @Html.DisplayFor(m => m.AboutMe)
+                            </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="cell">Добрее всех конечно </div>
                         <div class="cell">
-                            @Html.DisplayFor(m => m.KindnessOpinion)
+                            <div>
+                                Мне нравятся
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <div class="indent">
+                                @Html.CreateProfileHelper(Model.Likes,"ul")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="cell"><div>Добрее всех конечно
+                    </div>
+                </div>
+                <div class="cell"><div>
+                @Html.DisplayFor(m => m.KindnessOpinion)
+            </div>
                         </div>
                     </div>
                    

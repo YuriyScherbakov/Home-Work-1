@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DAL.Models;
 
 namespace Blog.Helpers
     {
     public static class ProfileHelper
         {
-        public static MvcHtmlString CreateProfileHelper (this HtmlHelper html,IEnumerable<string> options, string type)
+        public static MvcHtmlString CreateProfileHelper (this HtmlHelper html,IEnumerable<Like> options, string type)
             {
             TagBuilder ul = new TagBuilder (type);
 
@@ -16,7 +17,7 @@ namespace Blog.Helpers
                 {
                 TagBuilder li = new TagBuilder ("li");
                
-                li.InnerHtml += (item);
+                li.InnerHtml += (item.SomeOneToLike);
                 ul.InnerHtml += li;
                 }
            

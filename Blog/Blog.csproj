@@ -100,7 +100,9 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -110,11 +112,6 @@
     </Compile>
     <Compile Include="Helpers\ListHelper.cs" />
     <Compile Include="Helpers\ProfileHelper.cs" />
-    <Compile Include="Models\Article.cs" />
-    <Compile Include="Models\ArticlesCreator.cs" />
-    <Compile Include="Models\Profile.cs" />
-    <Compile Include="Models\Review.cs" />
-    <Compile Include="Models\ReviewsCreator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +137,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{ebcf5041-c20d-47d0-be77-258ec6fdb537}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
