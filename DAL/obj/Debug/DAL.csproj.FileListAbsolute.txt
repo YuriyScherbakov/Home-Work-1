@@ -1,0 +1,10 @@
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\DAL\bin\Debug\DAL.dll.config
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\DAL\bin\Debug\DAL.dll
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\DAL\bin\Debug\DAL.pdb
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\DAL\bin\Debug\EntityFramework.dll
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\DAL\bin\Debug\EntityFramework.xml
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\DAL\obj\Debug\DAL.dll
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\DAL\obj\Debug\DAL.pdb
