@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Blog.Helpers
     {
     public static class ListHelper
         {
-        public static MvcHtmlString CreateList (this HtmlHelper html,IEnumerable<Blog.Models.Article> articles)
+        public static MvcHtmlString CreateList (this HtmlHelper html,IEnumerable<DAL.ViewModels.ArticleViewModel> articles)
             {
             TagBuilder ul = new TagBuilder ("ul");
             ul.MergeAttribute ("class","listULarticles");
@@ -65,11 +63,14 @@ namespace Blog.Helpers
                     divArticleContainerTextPlainContainer.SetInnerText (article.Text);
                     articleHeaderReadArticleLink.MergeAttribute ("href","/Main/Index");
                     articleHeaderReadArticleLink.SetInnerText ("Вернуться к списку статей");
+                        TagBuilder divKeyWordLinks = new TagBuilder ("div");
+                        divKeyWordLinks.SetInnerText("EEEEEEEEEEEE");
+                        divArticleContainerTextPlainContainer.InnerHtml += divKeyWordLinks;
                     }
                 else
                     {
                      articleHeaderReadArticleLink.MergeAttribute ("href","/Main/GetArticle/" + article.Id);
-                    articleHeaderReadArticleLink.SetInnerText ("Показать всю статью");
+                    articleHeaderReadArticleLink.SetInnerText ("Подробнее");
                     divArticleContainerTextPlainContainer.SetInnerText (article.TextPreview);
                     }
 

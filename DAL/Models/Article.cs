@@ -2,11 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using DAL.Models;
 
 namespace Blog.Models
     {
     public class Article
         {
+            public Article()
+            {
+                KeyWords = new List<KeyWord>();
+            }
         public int Id
             {
             get; set;
@@ -24,13 +29,9 @@ namespace Blog.Models
             {
             get; set;
             }
-        public string TextPreview
+            public virtual ICollection<KeyWord> KeyWords
             {
-            get {
-                var str = new string (Text.Take (300).ToArray());
-                return str + "...";
-                }
-
+                get; set;
             }
         }
     }

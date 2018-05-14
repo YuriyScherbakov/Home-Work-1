@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DAL.Models;
 
 namespace DAL.Repos
     {
@@ -22,16 +23,25 @@ namespace DAL.Repos
             {
                 get; set;
             }
+            public DbSet<KeyWord> KeyWords
+            {
+                get; set;
+            }
 
+            public BlogContext ()
+                :base("BlogDBConnection")
+            {
+            }
 
         static BlogContext ()
             {
             Database.SetInitializer<BlogContext> (new BlogContextInitializer ());
             }
 
-        public BlogContext ()
-                :base("BlogDBConnection")
+            protected override void OnModelCreating(DbModelBuilder modelBuilder)
             {
+                modelBuilder.Entity<Article>().HasMany(k => k.KeyWords)
+                    .WithMany(a => a.Articles);
             }
         }
     }

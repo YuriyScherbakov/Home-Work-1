@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ArticlesCreator.cs" />
+    <Compile Include="Models\KeyWord.cs" />
+    <Compile Include="Models\KeyWordsCreator.cs" />
     <Compile Include="Models\Like.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\Review.cs" />
@@ -58,6 +60,9 @@
     <Compile Include="Repos\BlogContextInitializer.cs" />
     <Compile Include="Repos\GenericRepository.cs" />
     <Compile Include="Repos\UnitOfWork.cs" />
+    <Compile Include="Util\RandomNumberGenerator.cs" />
+    <Compile Include="ViewModels\ArticleViewModel.cs" />
+    <Compile Include="ViewModels\ArticleViewModelManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
