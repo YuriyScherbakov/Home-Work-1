@@ -32,7 +32,7 @@
                                placeholder = "Напишите тут..",
                                style = "height:200px"
                                })
-                                @Html.ValidationMessageFor(n => n.Text, "Напишите нам что-то", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(n => n.Text, "", new { @class = "text-danger" })
                                 <br>
                                 <button class="button">Сохранить отзыв</button>
                                 }

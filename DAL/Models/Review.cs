@@ -31,14 +31,10 @@ namespace DAL.Models
             {
             get; set;
             }
-        public string PublicationDateToShortDateString
-            {
-            get
-                {
-                return PublicationDate.ToShortDateString ();
-                }
-            }
-            [Required]
+        public string PublicationDateToShortDateString => PublicationDate.ToShortDateString ();
+
+            [Required (ErrorMessage ="Напишите нам что-то")]
+            [MinLength(6,ErrorMessage = "Хотя бы два три слова")]
         public string Text
             {
             get; set;
