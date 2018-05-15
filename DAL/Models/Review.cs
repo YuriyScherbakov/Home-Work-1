@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Blog.Models
+namespace DAL.Models
     {
     public class Review
         {
@@ -21,6 +22,7 @@ namespace Blog.Models
             {
             get; set;
             }
+            [Required]
         public string Name
             {
             get; set;
@@ -36,6 +38,7 @@ namespace Blog.Models
                 return PublicationDate.ToShortDateString ();
                 }
             }
+            [Required]
         public string Text
             {
             get; set;

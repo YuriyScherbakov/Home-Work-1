@@ -20,6 +20,7 @@ namespace Blog.Helpers
 
                 TagBuilder articleHeaderReadArticleLink = new TagBuilder ("a");
 
+                    articleHeaderReadArticleLink.MergeAttribute("class","button");
                 TagBuilder divArticleContainer = new TagBuilder ("div");
                 divArticleContainer.MergeAttribute ("class","articleContainer");
 
@@ -64,7 +65,18 @@ namespace Blog.Helpers
                     articleHeaderReadArticleLink.MergeAttribute ("href","/Main/Index");
                     articleHeaderReadArticleLink.SetInnerText ("Вернуться к списку статей");
                         TagBuilder divKeyWordLinks = new TagBuilder ("div");
-                        divKeyWordLinks.SetInnerText("EEEEEEEEEEEE");
+                        divKeyWordLinks.MergeAttribute ("class","divKeyWordLinks");
+                        TagBuilder keyWordLinksHead = new TagBuilder ("div");
+                        keyWordLinksHead.MergeAttribute ("class","keyWordLinksHead");
+                        keyWordLinksHead.SetInnerText("Ключевые слова: ");
+                        divKeyWordLinks.InnerHtml += keyWordLinksHead;
+                    foreach (var keyWord in articles.FirstOrDefault(b=>true).KeyWords)
+                        {
+                            TagBuilder keyWordLinks = new TagBuilder ("div");
+                            keyWordLinks.MergeAttribute("class","keyWordLinks");
+                            keyWordLinks.SetInnerText(keyWord.Word);
+                            divKeyWordLinks.InnerHtml += keyWordLinks;
+                        }
                         divArticleContainerTextPlainContainer.InnerHtml += divKeyWordLinks;
                     }
                 else

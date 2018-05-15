@@ -1,10 +1,7 @@
-﻿
+﻿@model DAL.Models.Review
 @{
     ViewBag.Title = "Добавьте свой отзыв";
 }
-
-
-
 <ul>
         <li>
             <div class="articleHeader">
@@ -18,15 +15,28 @@
                 </div>
                 <div class="divArticleContainerText">
                     <div>
-                        @using ( Html.BeginForm (FormMethod.Post) )
-                            {                
-                            <input type="text"  name="name" placeholder="Укажите Ваше имя">
+                        @using ( Html.BeginForm ("AddReview","Main",FormMethod.Post) )
+                            { 
                            
-                            <textarea   name="review" placeholder="Напишите тут.." style="height:200px"></textarea>
-
-                            <input type="submit" value="Submit">
-                            }
-                    </div>
+                           @Html.EditorFor(model => model.Name,new
+                          {
+                          htmlAttributes = new
+                              {
+                              placeholder = "Укажите Ваше имя"
+                              }
+                          })
+                           @Html.ValidationMessageFor(model => model.Name, "Необходимо указать имя", new { @class = "text-danger" })
+                          
+                                @Html.TextAreaFor(m => m.Text,new
+                               {
+                               placeholder = "Напишите тут..",
+                               style = "height:200px"
+                               })
+                                @Html.ValidationMessageFor(n => n.Text, "Напишите нам что-то", new { @class = "text-danger" })
+                                <br>
+                                <button class="button">Сохранить отзыв</button>
+                                }
+</div>
                 </div>
             </div>
         </li>

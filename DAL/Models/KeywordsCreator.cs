@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Blog.Models;
 
 namespace DAL.Models
     {
@@ -20,7 +20,8 @@ namespace DAL.Models
                 new KeyWord()
                 {
                     Id = 1,
-                    Word = "Pецепт"
+                    Word = "Мышка"
+
                 },
                 new KeyWord()
                 {

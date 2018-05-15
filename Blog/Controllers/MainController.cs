@@ -1,6 +1,4 @@
-﻿using Blog.Models;
-using System;
-using System.Collections.Generic;
+﻿
 using System.Web.Mvc;
 using DAL.Models;
 using DAL.Repos;
@@ -18,10 +16,12 @@ namespace Blog.Controllers
 
         public ActionResult Index ()
             {
+                ViewBag.Title = "Главная";
             return View (ArticleViewModelManager.GetArticlesViewModels (this.unitOfWork.ArticleRepository.Get ()));
             }
         public ActionResult GetArticle (int Id)
             {
+                ViewBag.Title = "Статья";
             return View ("Index",ArticleViewModelManager.GetArticlesViewModels (
                 this.unitOfWork.ArticleRepository.GetByID (Id)));
             }
@@ -35,20 +35,18 @@ namespace Blog.Controllers
             return View ();
             }
         [HttpPost]
-        public ActionResult AddReview (string review,string name)
-            {
-            if ( String.IsNullOrEmpty (review) || String.IsNullOrEmpty (name) )
+        public ActionResult AddReview (Review review)
+        {
+           
+                if (!ModelState.IsValid)
                 {
-                return View ();
+                    return View ();
                 }
-            else
-                {
                 this.unitOfWork.ReviewRepository.Insert (new Review (this.unitOfWork
-                    .ReviewRepository.Get (),name,review));
+                    .ReviewRepository.Get (),review.Name,review.Text));
                 this.unitOfWork.Save ();
                 return View ("GuestPage",this.unitOfWork.ReviewRepository.Get ());
-                }
-
+             
             }
 
         [HttpGet]

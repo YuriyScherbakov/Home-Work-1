@@ -24,7 +24,7 @@
             <div class="divArticleContainerText">
                 <div>
 
-                    @using ( Html.BeginForm (FormMethod.Post) )
+                    @using ( Html.BeginForm ("AddProfile","Main",FormMethod.Post) )
                         {
                         <input type="text" name="name" placeholder="Укажите Ваше имя">
 
@@ -44,8 +44,8 @@
                             @Html.RadioButton("Person","Dad")
                     <span>Папа</span><br>
                             @Html.RadioButton("Person","Grandma")
-                    <span>Бабушка</span>
-                            <input type="submit" value="Сохранить анкету">
+                    <span>Бабушка</span><br>
+                            <button  class="button"> Сохранить анкету</button> 
                         }
                 
                 </div>

@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using DAL.Models;
 
-namespace Blog.Models
+namespace DAL.Models
     {
     public class Article
         {

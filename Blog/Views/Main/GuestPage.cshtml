@@ -1,12 +1,12 @@
-﻿@model IEnumerable<Blog.Models.Review>
+﻿@model IEnumerable<DAL.Models.Review>
 
 @{
     ViewBag.Title = "Гостевая";
 }
 
-@using ( Html.BeginForm ("AddReview","Main", FormMethod.Post) )
+@using ( Html.BeginForm ("AddReview","Main", FormMethod.Get) )
     {
-    <button class="button button4">Добавить отзыв</button>
+    <button class="button  ">Добавить отзыв</button>
     }
 
 @section Menu

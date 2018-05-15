@@ -50,8 +50,8 @@ main {
 aside {
     min-width: 20%;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 50px;
     margin-top: 30px;
     margin-left: 15px;
@@ -157,9 +157,13 @@ aside {
         -webkit-hyphens: auto;
         hyphens: auto;
     }
-    .divArticleContainerTextNameDateDate{
-
-} 
+.divKeyWordLinks {
+    display: flex;
+    flex-direction: row;
+}
+.keyWordLinks {
+    margin-left: 20px;
+}
 h3 {
     font-size: 25px;
 }
@@ -194,8 +198,6 @@ p {
     background-repeat: no-repeat;
 }
 .button {
-   
-    color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -229,7 +231,7 @@ input[type=submit] {
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
-    border: none;
+   
     cursor: pointer;
 }
 
@@ -241,4 +243,51 @@ form {
 }
 .listULarticles {
     margin-top:20px;
+}
+.voting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.voting-radio {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+.field-validation-error {
+    color: #f20a5e;
+    font-weight: bold;
+   
+}
+
+input.input-validation-error {
+    border: 1px solid #f0093f;
+   
+}
+textarea.input-validation-error {
+    border: 1px solid #f0093f!important;
 }

@@ -8,3 +8,4 @@ C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\DAL\bin\Debug\EntityFramework.SqlServer.
 C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\DAL\obj\Debug\DAL.dll
 C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\DAL\obj\Debug\DAL.pdb
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
