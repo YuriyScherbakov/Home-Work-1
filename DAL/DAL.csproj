@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\ArticlesCreator.cs" />
+    <Compile Include="Models\IArticle.cs" />
     <Compile Include="Models\KeyWord.cs" />
     <Compile Include="Models\KeyWordsCreator.cs" />
     <Compile Include="Models\Like.cs" />
@@ -63,6 +64,8 @@
     <Compile Include="Util\RandomNumberGenerator.cs" />
     <Compile Include="ViewModels\ArticleViewModel.cs" />
     <Compile Include="ViewModels\ArticleViewModelManager.cs" />
+    <Compile Include="ViewModels\KeyWordsViewModel.cs" />
+    <Compile Include="ViewModels\KeyWordsViewModelManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

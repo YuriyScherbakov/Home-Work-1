@@ -1,5 +1,4 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DAL.Models;
 
 namespace DAL.ViewModels
@@ -43,7 +42,6 @@ namespace DAL.ViewModels
                 Text = article.Text,
                 KeyWords = KeyWordsFiller (article)
                 });
-
             }
         }
     }

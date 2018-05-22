@@ -5,11 +5,11 @@ using DAL.Models;
 
 namespace DAL.ViewModels
     {
-   public class ArticleViewModel
+    public class ArticleViewModel
         {
-            public int Id
+        public int Id
             {
-                get; set;
+            get; set;
             }
         public string Name
             {
@@ -25,9 +25,9 @@ namespace DAL.ViewModels
             get; set;
             }
 
-            public List<KeyWord> KeyWords
+        public List<KeyWord> KeyWords
             {
-                get; set;
+            get; set;
             }
 
         public string TextPreview
@@ -37,7 +37,6 @@ namespace DAL.ViewModels
                 var str = new string (Text.Take (200).ToArray ());
                 return str + "...";
                 }
-
             }
         }
     }

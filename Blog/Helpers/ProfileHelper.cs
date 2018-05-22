@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using DAL.Models;
 
@@ -20,9 +17,6 @@ namespace Blog.Helpers
                 li.InnerHtml += (item.SomeOneToLike);
                 ul.InnerHtml += li;
                 }
-           
-
-
             return new MvcHtmlString (ul.ToString ());
             }
         }

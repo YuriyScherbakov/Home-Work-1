@@ -2,12 +2,8 @@
 
 namespace DAL.Models
     {
-    
     public class Profile
         {
-
-       // List<string> likes;
-
         public Profile ()
             {
             this.Likes = new List<Like> ();
@@ -21,7 +17,6 @@ namespace DAL.Models
             {
             get; set;
             }
-
         public string KindnessOpinion
             {
             get; set;

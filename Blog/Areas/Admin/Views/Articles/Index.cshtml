@@ -1,0 +1,48 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model IPagedList<DAL.Models.Article>
+<div class="main-articles-content">
+    <p>
+        @Html.ActionLink("Добавить статью", "Create",null,
+            new
+            {
+                @class = "btn btn-default"
+            })
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First ().Text)
+            </th>
+            <th></th>
+        </tr>
+    
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.TextPreview)
+                </td>
+                <td>
+                    @Html.ActionLink("Выбрать теги","EditTags",new {id=item.Id},
+                        new
+                        {
+                            @class = "btn btn-default"
+                        })
+                </td>
+            </tr>
+        }
+   
+    </table>
+    @Html.PagedListPager(Model,page => Url.Action("Index",new
+        {
+        page
+        }))
+</div>

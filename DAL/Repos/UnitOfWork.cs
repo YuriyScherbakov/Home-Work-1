@@ -10,8 +10,22 @@ namespace DAL.Repos
             private GenericRepository<Article> articleRepository;
             private GenericRepository<Profile> profileRepository;
             private GenericRepository<Review> reviewRepository;
-        
-            public GenericRepository<Article> ArticleRepository
+            private GenericRepository<KeyWord> keyWordRepository;
+
+
+        public GenericRepository<KeyWord> KeyWordRepository
+            {
+            get
+            {
+                if ( this.keyWordRepository == null )
+                {
+                    this.keyWordRepository = new GenericRepository<KeyWord> (context);
+                }
+                return keyWordRepository;
+            }
+        }
+
+        public GenericRepository<Article> ArticleRepository
             {
                 get
                 {

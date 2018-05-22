@@ -155,3 +155,12 @@ C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\Blog\obj\Debug\Blog.pdb
 C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\Blog\bin\Blog.dll.config
 C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\Blog\bin\Blog.dll
 C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\Blog\bin\Blog.pdb
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\Blog\bin\Antlr3.Runtime.dll
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\Blog\bin\System.Web.Optimization.dll
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\Blog\bin\WebGrease.dll
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\Blog\bin\EntityFramework.SqlServer.dll
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\Blog\bin\EntityFramework.SqlServer.xml
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\Blog\bin\PagedList.dll
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\Blog\bin\PagedList.Mvc.dll
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\Blog\bin\PagedList.xml
+C:\Users\yuriy\Desktop\Epam.net\MVC\HW2\Blog\bin\PagedList.Mvc.xml

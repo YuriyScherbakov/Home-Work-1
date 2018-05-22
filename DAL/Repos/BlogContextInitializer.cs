@@ -1,5 +1,4 @@
-﻿
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using DAL.Models;
 
@@ -21,6 +20,5 @@ namespace DAL.Repos
                 }
             db.SaveChanges ();
             }
-
         }
     }

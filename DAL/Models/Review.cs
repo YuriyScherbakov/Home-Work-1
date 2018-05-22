@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
 
 namespace DAL.Models
     {
     public class Review
         {
-        public Review () { }
-        public Review (IEnumerable<Review> reviews, string name, string text)
+        public Review ()
+            {
+            }
+        public Review (IEnumerable<Review> reviews,string name,string text)
             {
             var ID = reviews.Max (id => id.Id);
             ID++;
@@ -22,7 +23,7 @@ namespace DAL.Models
             {
             get; set;
             }
-            [Required]
+        [Required]
         public string Name
             {
             get; set;
@@ -33,8 +34,8 @@ namespace DAL.Models
             }
         public string PublicationDateToShortDateString => PublicationDate.ToShortDateString ();
 
-            [Required (ErrorMessage ="Напишите нам что-то")]
-            [MinLength(6,ErrorMessage = "Хотя бы два три слова")]
+        [Required (ErrorMessage = "Напишите нам что-то")]
+        [MinLength (6,ErrorMessage = "Хотя бы два три слова")]
         public string Text
             {
             get; set;

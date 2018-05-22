@@ -1,0 +1,7 @@
+﻿@model DAL.ViewModels.KeyWordsViewModel
+
+@Html.HiddenFor(m => m.Id)
+@Html.HiddenFor(m => m.Word)
+
+@Html.CheckBoxFor(m => m.IsSelected)
+@Html.DisplayFor(m => m.Word)

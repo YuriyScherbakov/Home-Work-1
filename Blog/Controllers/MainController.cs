@@ -1,4 +1,4 @@
-﻿
+﻿using System.Threading;
 using System.Web.Mvc;
 using DAL.Models;
 using DAL.Repos;
@@ -16,7 +16,8 @@ namespace Blog.Controllers
 
         public ActionResult Index ()
             {
-                ViewBag.Title = "Главная";
+                ViewBag.Title =  Thread.CurrentPrincipal.Identity.Name;
+                ;
             return View (ArticleViewModelManager.GetArticlesViewModels (this.unitOfWork.ArticleRepository.Get ()));
             }
         public ActionResult GetArticle (int Id)
@@ -37,7 +38,6 @@ namespace Blog.Controllers
         [HttpPost]
         public ActionResult AddReview (Review review)
         {
-           
                 if (!ModelState.IsValid)
                 {
                     return View ();
@@ -46,7 +46,6 @@ namespace Blog.Controllers
                     .ReviewRepository.Get (),review.Name,review.Text));
                 this.unitOfWork.Save ();
                 return View ("GuestPage",this.unitOfWork.ReviewRepository.Get ());
-             
             }
 
         [HttpGet]
@@ -74,7 +73,6 @@ namespace Blog.Controllers
                 {
                 profile.Likes.Add (new Like () { SomeOneToLike = "Собачки" });
                 }
-
             switch ( formCollection ["Person"] )
                 {
                 case "Grandma":
@@ -93,10 +91,5 @@ namespace Blog.Controllers
 
             return View ("ShowProfile",profile);
             }
-
-
         }
-
-
-
     }

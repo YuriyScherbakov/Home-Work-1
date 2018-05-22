@@ -4,8 +4,7 @@ using System.Collections.Generic;
 namespace DAL.Models
     {
     public class ReviewsCreator
-      
-         {
+        {
         static IList<Review> reviews;
         public static IList<Review> GetReviews ()
             {
@@ -39,8 +38,6 @@ namespace DAL.Models
                 new Review () {Id=12, Name="Павел", PublicationDate=DateTime.Parse("2/10/2017"),
                                Text ="Алиса глядела во все глаза, но внизу ничего не было видно, кроме бесконечно длинной шеи, вздымавшейся, словно мачта, над целым морем зелени." }
                 };
-
             }
         }
     }
-  

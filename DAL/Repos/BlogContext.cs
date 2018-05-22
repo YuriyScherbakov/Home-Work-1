@@ -1,30 +1,28 @@
-﻿
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using DAL.Models;
 
 namespace DAL.Repos
     {
-        public class BlogContext : DbContext
+    public class BlogContext : DbContext
         {
-            public DbSet<Article> Articles
+        public DbSet<Article> Articles
             {
-                get; set;
+            get; set;
             }
-            public DbSet<Profile> Profiles
+        public DbSet<Profile> Profiles
             {
-                get; set;
+            get; set;
             }
-            public DbSet<Review> Reviews
+        public DbSet<Review> Reviews
             {
-                get; set;
+            get; set;
             }
-            public DbSet<KeyWord> KeyWords
+        public DbSet<KeyWord> KeyWords
             {
-                get; set;
+            get; set;
             }
-
-            public BlogContext ()
-                :base("BlogDBConnection")
+        public BlogContext ()
+            : base ("BlogDBConnection")
             {
             }
 
@@ -33,10 +31,14 @@ namespace DAL.Repos
             Database.SetInitializer<BlogContext> (new BlogContextInitializer ());
             }
 
-            protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating (DbModelBuilder modelBuilder)
             {
-                modelBuilder.Entity<Article>().HasMany(k => k.KeyWords)
-                    .WithMany(a => a.Articles);
+            modelBuilder.Entity<Article> ().HasMany (k => k.KeyWords)
+                .WithMany (a => a.Articles);
+            }
+        public System.Data.Entity.DbSet<DAL.ViewModels.KeyWordsViewModel> KeyWordsViewModels
+            {
+            get; set;
             }
         }
     }

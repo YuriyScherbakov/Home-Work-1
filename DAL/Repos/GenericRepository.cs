@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
-using System.Text;
-using System.Threading.Tasks;
 using System.Linq.Expressions;
 
 namespace DAL.Repos
@@ -18,14 +16,11 @@ namespace DAL.Repos
             this.context = context;
             this.dbSet = ((DbContext) context).Set<TEntity> ();
             }
-
         public virtual IEnumerable<TEntity> GetWithRawSql (string query,params object [] parameters)
             {
             return dbSet.SqlQuery (query,parameters).ToList ();
             }
-
         public virtual IEnumerable<TEntity> Get (
-           
             Expression<Func<TEntity,bool>> filter = null,
             Func<IQueryable<TEntity>,IOrderedQueryable<TEntity>> orderBy = null,
             string includeProperties = "")
